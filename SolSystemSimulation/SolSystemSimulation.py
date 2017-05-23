@@ -71,7 +71,7 @@ def printOppgaveC(planetA: planet, planets: List[planet], acceleration: vec):
 def eulersMethod2(xi1: vec, vi1: vec, h: float, xi2: vec = arrayToVec(Sol.pos), mass2: float = 1) -> [vec,
                                                                                                       vec]:
     a = gravitasjon(xi1, xi2, mass2)
-    x_t = xi1 + vi1 * h + 0.5 * (h ** 2) * a * 0.5 * (h ** 2)
+    x_t = xi1 + vi1 * h + 0.5 * (h ** 2) * a #* 0.5 * (h ** 2)
     v_t = vi1 + a * h
     return x_t, v_t
 
@@ -82,7 +82,7 @@ def variadicEulersMethod2(xi1: vec, vi1: vec, h: float,
     for planetInfo in otherPlanetsPosMass:
         a += gravitasjon(xi1, planetInfo[0], planetInfo[1])
 
-    x_t = xi1 + vi1 * h + 0.5 * (h ** 2) * a * 0.5 * (h ** 2)
+    x_t = xi1 + vi1 * h + 0.5 * (h ** 2) * a #* 0.5 * (h ** 2)
     v_t = vi1 + a * h
     return x_t, v_t
 
